@@ -1,11 +1,11 @@
 import React from "react";
 import styled from 'styled-components';
-import Toggle from "../tools/toogle";
-import OpenCloseBtn from "../buttons/openCloseBtn";
+import Toggle from "../../tools/toogle";
+import OpenCloseBtn from "../Buttons/OpenCloseBtn";
 import {connect} from "react-redux";
 import {bindActionCreators} from 'redux';
-import * as actions from "../redux/actions/actions";
-import List from './search/search'
+import * as actions from "../../redux/actions/actions";
+import List from './Search/Search'
 import logo from '../../logo.svg'
 import {Link} from "react-router-dom";
 

@@ -1,5 +1,5 @@
 import React, { useState } from "react";
-import Contact from "./contact";
+import Contact from "./Contact";
 import styled from "styled-components";
 
 const List = ({ data }) => {

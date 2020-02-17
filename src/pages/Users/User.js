@@ -2,7 +2,7 @@ import React from "react";
 import styled from "styled-components";
 import { useEffect, useState } from "react";
 import { bindActionCreators } from "redux";
-import * as actions from "../redux/actions/actions";
+import * as actions from "../../redux/actions/actions";
 import connect from "react-redux/es/connect/connect"
 import Loader from 'react-loader-spinner'
 import { Map, Marker, Popup, TileLayer } from 'react-leaflet'
@@ -14,18 +14,19 @@ const User = ({ actions, userData, match, loading }) => {
     const [street, setStreet] = useState([]);
     const [city, setCity] = useState([]);
     const [geo, setGeo] = useState([0,0]);
-    const trimMatch = match.params.id.slice(1);
+    const trimMatch = match.params.id;
+
 
     useEffect(() => {
-        actions.getDataUser(trimMatch).then(data=>{
+         actions.getDataUser(trimMatch).then(data=>{
             const {id, name, email, address:{street, city, geo:{lat,lng}}} = data.data;
             setId(id); setName(name); setEmail(email); setStreet(street);
             setCity(city); setGeo([+lat,+lng])
         });
-    }, [trimMatch]);
+    }, []);
 
     return (
-        <OuterWrapper loading={loading ? '24% 0' : '5%'}>
+        <OuterWrapper loading={loading ? 'display:flex; align-items: center; justify-content: center; height: 100%;' : 'margin:5%'}>
             <InnerWrapper>
                 {loading ? <Loader
                     type="Puff"
@@ -76,7 +77,7 @@ function mapDispatchToProps(dispatch) {
 }
 
 const OuterWrapper = styled.div`
-   margin: ${props =>  props.loading};
+   ${props =>  props.loading};
    text-align: center;
 `;
 

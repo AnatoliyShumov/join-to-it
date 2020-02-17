@@ -2,21 +2,22 @@ import React from "react";
 import styled from "styled-components";
 import { useEffect } from "react";
 import { bindActionCreators } from "redux";
-import * as actions from "../redux/actions/actions";
+import * as actions from "../../redux/actions/actions";
 import connect from "react-redux/es/connect/connect";
 import { Link } from 'react-router-dom'
 import Loader from "react-loader-spinner";
 
 const Users = ({ actions, usersData, loading }) => {
     const getData = actions.getData;
+    
     useEffect(() => {
         getData(true);
-    }, []);
+    }, [getData]);
     
     const renderData = usersData.map( (el, key) => {
         return (
             <div key={key}>
-                <Link to={`user:${el.id}`}><p>{el.username}</p></Link>
+                <Link to={`user/${el.id}`}><p>{el.username}</p></Link>
                 <p>{el.email}</p>
             </div>
         );

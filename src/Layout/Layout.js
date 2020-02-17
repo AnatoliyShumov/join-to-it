@@ -2,12 +2,12 @@ import React from "react";
 import styled from "styled-components";
 import { Route } from "react-router-dom";
 import { useDarkMode } from "../custom-hooks/useDarkMode";
-import { darkTheme, lightTheme } from "../../theme";
+import { darkTheme, lightTheme } from "../theme";
 import { ThemeProvider } from "styled-components";
-import { GlobalStyles } from "../../global";
-import Header from "../header/header";
-import Sidebar from "../sidebar/sidebar";
-import Footer from "../footer/footer";
+import { GlobalStyles } from "../global";
+import Header from "../components/Header/Header";
+import Sidebar from "../components/Sidebar/Sidebar";
+import Footer from "../components/Footer/Footer";
 import { bindActionCreators } from "redux";
 import * as actions from "../redux/actions/actions";
 import connect from "react-redux/es/connect/connect";
@@ -28,7 +28,6 @@ const Layout = ({ toggleSidebarState, component: Component, ...rest }) => {
                     <ThemeProvider theme={themeMode}>
                         <>
                             <GlobalStyles />
-                            {console.log()}
                             <Header {...matchProps} theme={theme} toggleTheme={toggleTheme} />
                             <ContentWrapper>
                                 <Sidebar openState={toggleSidebarState} openTrigger={actions.ShowHideSidebar } {...matchProps} />

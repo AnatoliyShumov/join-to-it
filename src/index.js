@@ -6,8 +6,8 @@ import './index.css';
 import * as serviceWorker from './serviceWorker';
 import { BrowserRouter } from "react-router-dom";
 import "./index.css";
-import Routes from "./components/routers/routers";
-import configureStore from "./components/redux/store/configureStore";
+import Routes from "./routers";
+import configureStore from "./redux/store/configureStore";
 
 
 const store = configureStore();

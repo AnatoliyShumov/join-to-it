@@ -2,14 +2,14 @@ import React from "react";
 import styled from 'styled-components';
 import {NavLink} from "react-router-dom";
 import {bindActionCreators} from "redux";
-import * as actions from "../redux/actions/actions";
+import * as actions from "../../redux/actions/actions";
 import connect from "react-redux/es/connect/connect";
 
 const Sidebar = ({openState, actions}) => {
     return (
         <StyledMenu open={openState} >
             <NavLink onClick={()=>actions.ShowHideSidebar()} exact activeClassName="is-active" to={`/`}><span role="img" aria-label="Home">🏠‍️</span>Home</NavLink>
-            <NavLink onClick={()=>actions.ShowHideSidebar()} activeClassName="is-active" to={`/user`}><span role="img" aria-label="User">👨‍🎓‍️</span>User</NavLink>
+            <NavLink onClick={()=>actions.ShowHideSidebar()} exact activeClassName="is-active" to={`/user`}><span role="img" aria-label="User">👨‍🎓‍️</span>User</NavLink>
         </StyledMenu>
     )
 }
