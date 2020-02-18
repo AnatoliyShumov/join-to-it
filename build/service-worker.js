@@ -14,7 +14,7 @@
 importScripts("https://storage.googleapis.com/workbox-cdn/releases/4.3.1/workbox-sw.js");
 
 importScripts(
-  "./https://anatoliyshumov.github.io/join-to-it/precache-manifest.7f97d2b9c3fdb7f7ae49bc9e8fb38d43.js"
+  "./https://anatoliyshumov.github.io/join-to-it/build/precache-manifest.a991e649a1f1a70f563ad4d780bf01c1.js"
 );
 
 self.addEventListener('message', (event) => {
@@ -33,7 +33,7 @@ workbox.core.clientsClaim();
 self.__precacheManifest = [].concat(self.__precacheManifest || []);
 workbox.precaching.precacheAndRoute(self.__precacheManifest, {});
 
-workbox.routing.registerNavigationRoute(workbox.precaching.getCacheKeyForURL("./https://anatoliyshumov.github.io/join-to-it/index.html"), {
+workbox.routing.registerNavigationRoute(workbox.precaching.getCacheKeyForURL("./https://anatoliyshumov.github.io/join-to-it/build/index.html"), {
   
   blacklist: [/^\/_/,/\/[^\/?]+\.[^\/]+$/],
 });
